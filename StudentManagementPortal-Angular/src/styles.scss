@@ -1,0 +1,147 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-image: url("assets/studentBg.jpg");
+  height: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;}
+.navbar-nav {
+    flex-direction: row;
+}  
+img {
+    margin-bottom: 1px;
+}
+.nav-link {
+    padding-right: .5rem !important;
+    padding-left: .5rem !important;
+}  
+  /* Fixes dropdown menus placed on the right side */
+.ml-auto .dropdown-menu {
+   left: auto !important;
+   right: 0px;
+}
+#wrapper .rounded {
+    border-radius: 0px !important;
+}
+#wrapper .fixed-top {
+    border-bottom: 10px solid #66aad2;
+}
+#wrapper .bg-dark {
+    background-color: #2d3135 !important;
+    opacity: 0.9;
+}
+#wrapper .navbar-brand {
+    padding-top: 0;
+    margin-right: 0;
+}
+#wrapper  .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link:focus  {
+    outline: none !important;
+    box-shadow: none !important;
+}
+#wrapper .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+    background: #ffffff;
+    border-color: #66aad2;
+    color: #66aad2;
+}
+#wrapper .p-datatable .p-datatable-tbody > tr > td {
+   padding: .6rem .6rem;
+}
+#wrapper .p-datatable .p-datatable-thead > tr > th {
+    padding: .6rem .6rem;
+}
+#wrapper .p-datatable table {
+    table-layout: auto;
+}
+#wrapper .p-card {
+    box-shadow: 4px 2px 4px -3px rgb(0 0 0 / 20%), 2px 5px 9px 2px rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+#wrapper .p-paginator .p-dropdown .p-dropdown-label {
+    padding-top: 0px;
+    padding: 8px 15px;
+}
+#wrapper .p-datatable .p-sortable-column .p-column-title, .p-datatable .p-sortable-column .p-sortable-column-badge, .p-datatable .p-sortable-column .p-sortable-column-icon {
+    font-size: 0.8rem;
+}
+#wrapper .p-inputtext {
+    width: -webkit-fill-available;
+    font-size: 0.8rem;
+    color: #000;
+    padding: 0.3rem 0.3rem;
+    background-image: linear-gradient(to bottom right, #e3eff7, white);
+    box-shadow: 0px 1px 4px -1px grey;
+}
+#wrapper .p-dropdown { 
+    width: -webkit-fill-available;
+}
+#wrapper label {
+   font-size: 14px;
+}
+#wrapper .row {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+#wrapper .p-button {
+    padding: 0.2rem 1rem;
+    font-size: 14px;
+    width: 30%;
+}
+#updateBtn .p-button {
+    width: 15% !important;
+}
+#wrapper .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link:hover {
+    text-decoration: none;
+    outline: none;
+}
+#wrapper .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link:focus {
+    text-decoration: none;
+    outline: none;
+}
+#wrapper .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link:active {
+    text-decoration: none;
+    outline: none;
+}
+#wrapper .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    text-decoration: none;
+    padding:0.8rem;
+    box-shadow: none;
+}
+#wrapper .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background: #ffffff;
+    border-color: #66aad2;
+    color: #66aad2;
+}
+#wrapper .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    background: #66aad2;
+}
+#wrapper .p-dropdown-panel .p-dropdown-items .p-dropdown-item:hover {
+    background: #66aad2;
+}
+#wrapper .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: #66aad2;
+    border-color: #66aad2;
+}
+#wrapper .p-tabview .p-tabview-panels {
+    padding: 0; 
+    opacity: 0.9;
+}
+#wrapper .p-toast {
+    z-index: 99999 !important;
+    width: 35% !important;
+}
+#wrapper .p-fieldset .p-fieldset-legend {
+    padding: .5rem;
+    margin-left: 15px;
+    width: auto;
+    font-size: 14px;
+    background-image: linear-gradient(to bottom right, #e3eff7, white);
+}
+#wrapper legend {
+    margin-bottom: -1.5rem;
+}
+#wrapper .p-dropdown .p-dropdown-trigger {
+    background-image: linear-gradient(to bottom right, #e3eff7, white);
+    box-shadow: 0px 1px 4px -1px grey;
+}

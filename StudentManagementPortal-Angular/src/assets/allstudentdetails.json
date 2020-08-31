@@ -1,0 +1,18 @@
+[{ "firstname":"Akshay","lastName":"Balaji","address":"Chennai","pincode":"612076","contact":"9845632812","email":"akshayk@gmail.com","course":"CSE","rollNo":"122101","advisor":"Kalpana Krishnan","advisorId":100},
+    { "firstname":"Anand","lastName":"Srinivasan","address":"Cuddalore","pincode":"602376","contact":"6745632812","email":"Anand@gmail.com","course":"EEE","rollNo":"122102","advisor":"Melvin Louis","advisorId":102},
+    { "firstname":"Lakshman","lastName":"Vendhan","address":"Neyveli","pincode":"612076","contact":"9445632812","email":"lakshman@gmail.com","course":"IT","rollNo":"122103","advisor":"Krishna Kumar","advisorId":106},
+    { "firstname":"Venkat","lastName":"Prabu","address":"Pondichery","pincode":"603476","contact":"9125632808","email":"Venkat@gmail.com","course":"MECH","rollNo":"122104","advisor":"Sundaramoorthi","advisorId":103},
+    { "firstname":"Rajkumar","lastName":"Anbu","address":"Salem","pincode":"608676","contact":"9845042812","email":"Rajkumar@gmail.com","course":"CIVIL","rollNo":"122105","advisor":"Lakshimi Ram","advisorId":104},
+    { "firstname":"Kavi","lastName":"Mani","address":"Bangalore","pincode":"602776","contact":"9845232812","email":"Kavi@gmail.com","course":"CSE","rollNo":"122106","advisor":"Kalpana Krishnan","advisorId":100},
+    { "firstname":"Agalya","lastName":"Kirshnan","address":"Chennai","pincode":"600476","contact":"9800632812","email":"Agalya@gmail.com","course":"ECE","rollNo":"122107","advisor":"Venugopal Rao","advisorId":101},
+    { "firstname":"Sherwin","lastName":"Linus","address":"Chennai","pincode":"603076","contact":"9845600852","email":"Sherwin@gmail.com","course":"METT","rollNo":"122108","advisor":"Veera Krishnan","advisorId":105},
+    { "firstname":"Babu","lastName":"Ganesh","address":"Chennai","pincode":"600876","contact":"9841272802","email":"Babu@gmail.com","course":"ECE","rollNo":"122109","advisor":"Venugopal Rao","advisorId":101},
+    { "firstname":"Kevin","lastName":"Rehmar","address":"Bangalore","pincode":"610076","contact":"9845987812","email":"Kevin@gmail.com","course":"EEE","rollNo":"122110","advisor":"Melvin Louis","advisorId":102},
+    { "firstname":"Keerthika","lastName":"Murugan","address":"Trichy","pincode":"630076","contact":"9845632812","email":"Keerthika@gmail.com","course":"IT","rollNo":"122111","advisor":"Krishna Kumar","advisorId":106},
+    { "firstname":"Agalya","lastName":"Moorthi","address":"Chennai","pincode":"601076","contact":"9898632812","email":"Agalya@gmail.com","course":"MECH","rollNo":"122112","advisor":"Sundaramoorthi","advisorId":103},
+    { "firstname":"Usha","lastName":"Ganesan","address":"Madurai","pincode":"601076","contact":"8845632834","email":"Usha@gmail.com","course":"CSE","rollNo":"122113","advisor":"Kalpana Krishnan","advisorId":100},
+    { "firstname":"Sathish","lastName":"Kumar","address":"Chennai","pincode":"600076","contact":"8823632819","email":"Sathish@gmail.com","course":"ECE","rollNo":"122114","advisor":"Venugopal Rao","advisorId":101},
+    { "firstname":"Kowsalya","lastName":"Sekar","address":"Theni","pincode":"600376","contact":"9545632800","email":"Kowsalya@gmail.com","course":"CIVIL","rollNo":"122115","advisor":"Lakshimi Ram","advisorId":104},
+    { "firstname":"Ragavi","lastName":"Ezhil","address":"Coimbatore","pincode":"650076","contact":"9245632838","email":"Ezhil@gmail.com","course":"EEE","rollNo":"122116","advisor":"Melvin Louis","advisorId":102},
+    { "firstname":"Kalai","lastName":"Mugilan","address":"Chennai","pincode":"600976","contact":"9145632823","email":"Kalai@gmail.com","course":"MECH","rollNo":"122117","advisor":"Sundaramoorthi","advisorId":103}
+]

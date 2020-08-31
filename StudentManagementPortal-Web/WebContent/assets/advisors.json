@@ -1,0 +1,8 @@
+[{"advisorId":100,"advisorName":"Kalpana Krishnan","department":"CSE","mailId":"kalpana@gmail.com","contact":"9823758312"},
+    {"advisorId":101,"advisorName":"Venugopal Rao","department":"ECE","mailId":"venugopal@gmail.com","contact":"976548312"},
+    {"advisorId":102,"advisorName":"Melvin Louis","department":"EEE","mailId":"melvin@gmail.com","contact":"9887868312"},
+    {"advisorId":103,"advisorName":"Sundaramoorthi","department":"MECH","mailId":"sgopal@gmail.com","contact":"9823729912"},
+    {"advisorId":104,"advisorName":"Lakshimi Ram","department":"CIVIL","mailId":"lakshmi@gmail.com","contact":"9823752212"},
+    {"advisorId":105,"advisorName":"Veera Krishnan","department":"METT","mailId":"kveera@gmail.com","contact":"9912358312"},
+    {"advisorId":106,"advisorName":"Krishna Kumar","department":"IT","mailId":"krishna@gmail.com","contact":"9828472312"}
+]

@@ -1,0 +1,264 @@
+<div id="wrapper">
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true">
+        <p style="color: white"> Loading... </p>
+    </ngx-spinner>
+    <p-toast position="top-right" key="tl"></p-toast>
+    <p-dialog header="Advisor Information" [(visible)]="displayModal" [modal]="true" [style]="{width: '55vw'}"
+        [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+        <div class="row" style="margin-top: 0;">
+            <div class="col-lg-3" style="text-align: right;">
+                <label style="font-weight: 600;">Advisor Name :</label>
+            </div>
+            <div class="col-lg-3"><span>{{advisorInfo.advisorName}}</span></div>
+            <div class="col-lg-3" style="text-align: right;">
+                <label style="font-weight: 600;">Department :</label>
+            </div>
+            <div class="col-lg-3"><span>{{advisorInfo.department}}</span>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 0;">
+            <div class="col-lg-3" style="text-align: right;">
+                <label style="font-weight: 600;">Email Id :</label>
+            </div>
+            <div class="col-lg-3"><span>{{advisorInfo.mailId}}</span>
+            </div>
+            <div class="col-lg-3" style="text-align: right;">
+                <label style="font-weight: 600;">Contact :</label>
+            </div>
+            <div class="col-lg-3"><span>{{advisorInfo.contact}}</span>
+            </div>
+        </div>
+    </p-dialog>
+    <nav class="navbar bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"><img src="assets/comlogo.png" height="40" width="140">
+                    <span>Student Management Portal</span>
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a style="color:white;"><img src="assets/userImg.png" height="30" width="35"> Welcome, Mr.
+                        Aravind</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid" style="margin-top:100px">
+        <p-tabView [(activeIndex)]="activeIndex">
+            <p-tabPanel header="Dashboard">
+                <ng-template pTemplate="header"><i class="pi pi-fw pi-home"></i><span
+                        style="margin-left: 10px;">Dashboard</span></ng-template>
+                <p-card>
+                    <p-table [columns]="studcols" [value]="allStudentInfo" [paginator]="true" [rows]="10"
+                        [showCurrentPageReport]="true"
+                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                        [rowsPerPageOptions]="[10,25,50]">
+                        <ng-template pTemplate="header" let-columns>
+                            <tr>
+                                <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                                    {{col.header}}
+                                    <p-sortIcon [field]="col.field" ariaLabel="Activate to sort"
+                                        ariaLabelDesc="Activate to sort in descending order"
+                                        ariaLabelAsc="Activate to sort in ascending order">
+                                    </p-sortIcon>
+                                </th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-rowData let-columns="columns">
+                            <tr>
+                                <td *ngFor="let col of columns">
+                                    <span (click)="viewAdvisorInfo(rowData.advisorId)"
+                                        style="cursor:pointer;color:#66aad2;font-weight:600;"
+                                        *ngIf="col.header == 'Advisor Name'; else otherCols">
+                                        {{rowData[col.field]}}
+                                    </span>
+                                    <ng-template #otherCols>{{rowData[col.field]}}</ng-template>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-card>
+            </p-tabPanel>
+            <p-tabPanel header="Add Student Info">
+                <ng-template pTemplate="header"><i class="pi pi-fw pi-plus"></i><span style="margin-left: 10px;">Add
+                        Student Info</span></ng-template>
+                <p-card>
+                    <div class="container-fluid">
+                        <p-fieldset legend="Add Student Details">
+                            <div class="row">
+                                <div class="col-lg-2" style="text-align: right;">
+                                    <label style="font-weight: 600;">First Name :</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input id="firstName" type="text" size="30" pInputText
+                                        [(ngModel)]="studentInfo.firstname">
+                                </div>
+                                <div class="col-lg-2" style="text-align: right;">
+                                    <label style="font-weight: 600;">Last Name :</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input id="lasName" type="text" size="30" pInputText
+                                        [(ngModel)]="studentInfo.lastName">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2" style="text-align: right;">
+                                    <label style="font-weight: 600;">Address :</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input id="add" type="text" size="30" pInputText [(ngModel)]="studentInfo.address">
+                                </div>
+                                <div class="col-lg-2" style="text-align: right;">
+                                    <label style="font-weight: 600;">Contact :</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input id="cont" type="text" maxlength="10" pInputText
+                                        [(ngModel)]="studentInfo.contact">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2" style="text-align: right;">
+                                    <label style="font-weight: 600;">Email Id :</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input id="mail" type="text" size="30" pInputText [(ngModel)]="studentInfo.email">
+                                </div>
+                                <div class="col-lg-2" style="text-align: right;">
+                                    <label style="font-weight: 600;">Course :</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input id="cour" type="text" size="30" pInputText [(ngModel)]="studentInfo.course">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2" style="text-align: right;">
+                                    <label style="font-weight: 600;">Roll Number :</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input id="rolno" type="text" maxlength="6" pInputText
+                                        [(ngModel)]="studentInfo.rollNo">
+                                </div>
+                                <div class="col-lg-2" style="text-align: right;">
+                                    <label style="font-weight: 600;">Advisor Name :</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input id="advis" type="text" size="30" pInputText
+                                        [(ngModel)]="studentInfo.advisor">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6" style="text-align: right;">
+                                    <button pButton pRipple type="button"
+                                        (click)="saveStudentInfo(studentInfo, dropdown)" label="Save"
+                                        class="p-button-raised p-button-success p-button-text"></button>
+                                </div>
+                                <div class="col-lg-6" style="text-align: left;">
+                                    <button pButton pRipple type="button" (click)="resetStudentInfo()" label="Reset"
+                                        class="p-button-raised p-button-info p-button-text"></button>
+                                </div>
+                            </div>
+                        </p-fieldset>
+                    </div>
+                </p-card>
+            </p-tabPanel>
+            <p-tabPanel header="Edit Student Info">
+                <ng-template pTemplate="header"><i class="pi pi-fw pi-pencil"></i><span style="margin-left: 10px;">Edit
+                        Student Info</span></ng-template>
+                <p-card>
+                    <div class="container-fluid">
+                        <p-fieldset legend="Search By Roll Number">
+                            <div class="row">
+                                <div class="col-lg-4" style="text-align: right;">
+                                    <label style="font-weight: 600;">Roll Number :</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <p-dropdown #dropdown maxlength="6" id="rollNu" placeholder="Select a Roll Number"
+                                        (onChange)="onChangeRollNumber($event)" [options]="allStudentInfo"
+                                        [(ngModel)]="selectedRollNo" optionLabel="rollNo"></p-dropdown>
+                                </div>
+                                <div class="col-lg-2" style="text-align: left;">
+                                    <button style="width: -webkit-fill-available;" pButton pRipple type="button"
+                                        (click)="selectedRollNo = {};editedStudentInfo = {};" label="Reset"
+                                        class="p-button-raised p-button-info p-button-text"></button>
+                                </div>
+                            </div>
+                        </p-fieldset>
+                        <div class="row">
+                            <div class="col-lg-2" style="text-align: right;">
+                                <label style="font-weight: 600;">First Name :</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input id="editfirstName" type="text" size="30" pInputText
+                                    [(ngModel)]="editedStudentInfo.firstname">
+                            </div>
+                            <div class="col-lg-2" style="text-align: right;">
+                                <label style="font-weight: 600;">Last Name :</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input id="editlasName" type="text" size="30" pInputText
+                                    [(ngModel)]="editedStudentInfo.lastName">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2" style="text-align: right;">
+                                <label style="font-weight: 600;">Address :</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input id="editadd" type="text" size="30" pInputText
+                                    [(ngModel)]="editedStudentInfo.address">
+                            </div>
+                            <div class="col-lg-2" style="text-align: right;">
+                                <label style="font-weight: 600;">Contact :</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input id="editcont" type="text" maxlength="10" pInputText
+                                    [(ngModel)]="editedStudentInfo.contact">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2" style="text-align: right;">
+                                <label style="font-weight: 600;">Email Id :</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input id="editmail" type="text" size="30" pInputText
+                                    [(ngModel)]="editedStudentInfo.email">
+                            </div>
+                            <div class="col-lg-2" style="text-align: right;">
+                                <label style="font-weight: 600;">Course :</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input id="editcour" type="text" size="30" pInputText
+                                    [(ngModel)]="editedStudentInfo.course">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2" style="text-align: right;">
+                                <label style="font-weight: 600;">Roll Number :</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input id="editrolno" [disabled]="true" type="text" size="30" pInputText
+                                    [(ngModel)]="editedStudentInfo.rollNo">
+                            </div>
+                            <div class="col-lg-2" style="text-align: right;">
+                                <label style="font-weight: 600;">Advisor Name :</label>
+                            </div>
+                            <div class="col-lg-3">
+                                <input id="editadvis" type="text" size="30" pInputText
+                                    [(ngModel)]="editedStudentInfo.advisor">
+                            </div>
+                        </div>
+                        <div class="row" id="updateBtn">
+                            <div class="col-lg-6" style="text-align: right;">
+                                <button pButton pRipple type="button" (click)="updateStudentInfo(editedStudentInfo)"
+                                    label="Update" class="p-button-raised p-button-success p-button-text"></button>
+                            </div>
+                            <div class="col-lg-6" style="text-align: left;">
+                                <button pButton pRipple type="button" (click)="removeStudentInfo()" label="Remove"
+                                    class="p-button-raised p-button-info p-button-text"></button>
+                            </div>
+                        </div>
+                    </div>
+                </p-card>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</div>
